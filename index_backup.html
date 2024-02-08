@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+    <title>Jung Hyun Park, A Game Developer</title>
+    
+    <!-- 부트스트랩 5.3.2 설정 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
+    
+    <!-- 리액트 -->
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>      
+    
+    <style>
+		/*body {
+			margin: 2em;
+			font: 16px -apple-system, sans-serif;
+			line-height: 1.333em;
+		}
+		header {
+			text-align: center;
+		}
+		@media (prefers-color-scheme: dark) {
+			body {
+				background-color: #222;
+				color: #eee;
+			}
+			img {
+				filter: invert(1);
+			}
+		}*/
+    </style>
+  </head>
+  <body oncontextmenu="return false" onmousedown="return true" onselectstart="return false" oncopy="return false" onpaste="return false" oncut="return false">
+  
+    <div id="root"></div>
+
+	<script src="NavBar.js" type='text/babel'></script>	
+	<script src="AboutMe.js" type='text/babel'></script>
+	<script src="ContentResume.js" type='text/babel'></script>	
+	<script src="App.js" type='text/babel'></script>
+	<script type='text/babel'>
+	// React 18
+	const divRoot = document.getElementById("root")
+	const reactRoot = ReactDOM.createRoot(divRoot)
+	reactRoot.render( <App />)
+	</script> 
+  </body>  
+
+</html>
