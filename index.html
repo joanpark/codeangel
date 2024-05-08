@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="myfavicon.ico">
 
-    <title>Ken Park</title>
+    <title></title>
 
     <!-- Bootstrap -->
     <link href="public/css/bootstrap.min.css" rel="stylesheet">
@@ -37,8 +37,8 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
     </button>
-    <!--<a class="navbar-brand" href="#">Ken Park</a>-->
-    <a class="navbar-brand" href="javascript:window.location.reload(true)">Ken Park</a>
+
+    <a class="navbar-brand" href="javascript:window.location.reload(true)">Jung Hyun Park</a>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
     <ul class="nav navbar-nav">
@@ -66,7 +66,7 @@
 
     <hr>
     <footer>
-    <p>&copy; Ken Park 2016</p>
+    <p id="footer-copy"></p>
     </footer>
     </div>
     <!-- /컨테이-->
@@ -74,7 +74,7 @@
 	<script type="text/template" id="content_about">
 
     <div class="kp-col">
-    <h3><b>Ken Park</b></h3>
+    <h3 id="content_about_name"></h3>
     <p> Currently working as a Indie Game Developer. Creative Director & Programmer at <a href="https://www.facebook.com/profile.php?id=100013243391447">PopoMint</a></p>
     <p><img src=public/images/kpresume/location_icon.png style="width: 32px"> Seoul, South Korea</p>
     <p><img src=public/images/kpresume/link_icon.png style="width: 32px"> <a href="https://ken-park.appspot.com">ken-park.appspot.com </a></p>
@@ -216,8 +216,14 @@
         }
     ];
 
+    var ownerName = 'Jung Hyun Park';
+
     var g_jUtil;
     function onBodyLoad(){
+
+        document.title = ownerName;
+        document.getElementById("footer-copy").innerHTML = `&copy; ${ownerName} 2024`;
+        document.getElementsByClassName("navbar-brand").innerHTML = ownerName;
 
         g_jUtil = new JLIB.Util();
 
@@ -257,7 +263,9 @@
         $("#li_about").addClass("active");
 
         var aboutTemplate = $("#content_about").html();
-         $("#main_body").html(_.template(aboutTemplate,{}));
+        $("#main_body").html(_.template(aboutTemplate,{}));
+
+        document.getElementById("content_about_name").innerHTML = `<b>${ownerName}</b>`;         
     }
 
     function onClick_Portfolio(porfolio_index){
